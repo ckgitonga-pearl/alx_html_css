@@ -4,53 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caroline | Travel Consultant & Front-End Developer</title>
-       
-<link href="base.css" rel="stylesheet">
-<link href="styles.css" rel="stylesheet">
+
+    <link href="base.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
-<body>
-
-    
-<header>
-<h1>Caroline Gitonga</h1>
-<p>Travel Consultant | Front-End Developer | Creating Digital Experiences that Inspire Exploration
-</p>
-<a href="https://www.alxafrica.com/" target="_blank">
-      <img src="https://i.ibb.co/gTDZZT8/ALX-Logo-07.png" alt="ALX Logo">
-
-    </a>
-</header>
 
 <body>
-   
-    <h1>Welcome to My Website</h1>
-    <p><b><em>I build clean, responsive websites that help businesses stand out and make an impact.</em></b></p>
-<section>
-    
-    <h1> About Me</h1>
-    <p>
-      Hi there! I’m <strong>Caroline</strong>, an experienced travel consultant currently expanding my career into <strong>Front-End Development</strong> through the <em>ALX Software Engineering Program</em>. With years of experience in the travel and customer service industries, I’ve developed an eye for creating seamless experiences that truly resonate with people.
-    </p>
 
-    <h2> My Passion</h2>
-    <p>
-      I’m passionate about helping businesses especially in travel and service sectors stand out online through engaging, user-friendly, and purpose-driven websites. My mission is to merge creativity with functionality to deliver digital experiences that inspire trust and connection.
-    </p>
+    <!-- HEADER -->
+    <header>
 
-    <h2 style="color: #172c66;"> My Current Focus</h2>
-    <p>
-      Right now, I’m sharpening my skills in <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> to design and build responsive business websites that attract, inform, and convert visitors into loyal clients. I believe in the power of well-crafted websites to boost visibility and create lasting impressions.
-    </p>
+        <!-- NAV + LOGO RIGHT -->
+        <div class="header-top">
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#focus">My Focus</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
 
-    <h2 style="color: #172c66;">The Bigger Picture</h2>
-    <p>
-      My goal is to combine my travel consultancy expertise with front-end development to create digital experiences that connect people, inspire exploration, and promote business growth. Whether you’re into travel, tech, or transforming ideas into impact — let’s connect and make something meaningful together!
-    </p>
-  </section>
+            <a href="https://www.alxafrica.com/" target="_blank" class="alx-logo">
+                <img src="https://i.ibb.co/gTDZZT8/ALX-Logo-07.png" alt="ALX Logo">
+            </a>
+        </div>
 
+        <!-- TITLE AND TAGLINE -->
+        <h1>Caroline Gitonga</h1>
+        <p>Travel Consultant | Front-End Developer</p>
 
-<footer>
-    <p>Made by CK Gitonga | <a href="www.linkedin.com/in/caroline-gitonga-16597435a" target="_blank">Let's Connect on LinkedIn</a></p>
-  </footer>
+    </header>
+
+    <!-- MAIN FLEX WRAPPER -->
+    <main>
+
+        <!-- ARTICLE (2/3 width) -->
+        <article id="home">
+
+           
+            <section id="about">
+                <h1>About Me</h1>
+                <p>
+                    Hi there! I’m <strong>Caroline</strong>, an experienced travel consultant currently expanding my career into 
+                    <strong>Front-End Development</strong> through the <em>ALX Software Engineering Program</em>. With years of experience 
+                    in the travel and customer service industries, I’ve developed an eye for creating seamless experiences that truly 
+                    resonate with people.
+                </p>
+
+                <h2>My Passion</h2>
+                <p>
+                    I’m passionate about helping businesses especially in travel and service sectors stand out online through engaging, 
+                    user-friendly, and purpose-driven websites. My mission is to merge creativity with functionality to deliver digital 
+                    experiences that inspire trust and connection.
+                </p>
+
+                <h2 id="focus" style="color: #172c66;">My Current Focus</h2>
+                <p>
+                    Right now, I’m sharpening my skills in <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong> 
+                    to design and build responsive business websites that attract, inform, and convert visitors into loyal clients. I believe 
+                    in the power of well-crafted websites to boost visibility and create lasting impressions.
+                </p>
+
+                <h2 style="color: #172c66;">The Bigger Picture</h2>
+                <p>
+                    My goal is to combine my travel consultancy expertise with front-end development to create digital experiences that 
+                    connect people, inspire exploration, and promote business growth. Whether you’re into travel, tech, or transforming ideas 
+                    into impact — let’s connect and make something meaningful together!
+                </p>
+            </section>
+
+        </article>
+
+        <!-- ASIDE (1/3 width) -->
+        <aside id="contact">
+            <h2>Contact</h2>
+            <p>Email: ckgitonga@email.com</p>
+            <p>Location: Kenya</p>
+            <p>Let's connect and create something meaningful!</p>
+        </aside>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Made by CK Gitonga | 
+            <a href="www.linkedin.com/in/caroline-gitonga-16597435a" target="_blank">Let's Connect on LinkedIn</a>
+        </p>
+    </footer>
+
 </body>
 </html>

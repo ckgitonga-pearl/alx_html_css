@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schoolpage</title>
+    <style>
+/* Minimal styling so the structure is visible when opened in a browser */
+body {
+font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+margin: 0;
+padding: 0;
+line-height: 1.4;
+}
+
+
+header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 1rem;
+padding: 1rem 1.5rem;
+border-bottom: 1px solid #e6e6e6;
+background: #8c9bad;
+}
+
+
+.brand img {
+display: block;
+width: 48px;
+height: 48px;
+object-fit: contain;
+}
+
+
+nav ul {
+list-style: none;
+display: flex;
+gap: 1rem;
+margin: 0;
+padding: 0;
+}
+
+
+nav a {
+text-decoration: none;
+color: #111;
+font-weight: 600;
+}
+
+
+/* Small responsive tweak */
+@media (max-width: 480px) {
+header {
+flex-direction: column;
+align-items: flex-start;
+}
+}
+body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
+
+        header a {
+            text-decoration: none;
+            color: white;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        .banner {
+            background-image: url("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .banner-content h1 {
+            font-size: 60px;
+            margin: 0;
+        }
+
+        .banner-content p {
+            margin: 10px 0;
+            letter-spacing: 3px;
+        }
+
+        .banner button {
+            background-color: #a259ff;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 25px;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .pros {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #1a1a1a;
+        }
+
+        .pros h2 {
+            margin-bottom: 40px;
+        }
+
+        .pro-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .pro {
+            width: 200px;
+        }
+
+        .pro img {
+            width: 100%;
+            border-radius: 50%;
+        }
+</style>
+</head>
+<body>
+    <header>
+        <a class="brand" href="index.html" aria-label="Home">
+<img src="images/logo.png" alt="Site logo">
+</a>
+        <nav aria-label="Main navigation">
+<ul>
+<li><a href="courses.html">Courses</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="login.html">Login</a></li>
+</ul>
+</nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="block">
+<h1>Get Schooled</h1>
+<p>SMILES&nbsp;&nbsp;&nbsp;GRIN&nbsp;&nbsp;&nbsp;LAUGH</p>
+<button type="button">Register for free</button>
+
+</div>
+        </section>
+        <h2>Learn from the pros.</h2>
+        <section class="pros">
+            <div class="pro-list">
+                <div class="pro">
+                    <img src="images/1.png" alt="">
+                    <h3>Phillip Massey</h3>
+                    <p>Smile of the year</p>
+                    <p>2018-2019</p>
+                </div>
+
+                <div class="pro">
+                    <img src="images/3.png" alt="">
+                    <h3>Nannie Lawrence</h3>
+                    <p>Best little smile</p>
+                    <p>2017</p>
+                </div>
+
+                <div class="pro">
+                    <img src="images/2.png" alt="">
+                    <h3>Bruce Walters</h3>
+                    <p>Best<<Friend Smile>> live performonce 2019 </p>
+                        <p>winner 2016-2019</p>
+                </div>
+
+                <div class="pro">
+                    <img src="images/4.png" alt="">
+                    <h3>Henry Hughes</h3>
+                    <p>24h smile </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

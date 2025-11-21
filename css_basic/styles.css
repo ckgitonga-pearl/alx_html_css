@@ -3,11 +3,13 @@ body {
     flex-direction: column;
     height: 100vh;
     margin: 0;
+    background-color: rgb(233, 243, 243);
 }
 
 /* HEADER stays at top (auto height) */
 header {
-    padding: 20px;
+    padding: 5px;
+    background-color: rgb(236, 209, 185);
 }
 
 /* MAIN is a flex row */
@@ -59,3 +61,22 @@ aside {
     width: 60px;
     height: auto;
 }
+/* Table */
+        table {
+            width: 30%;
+            border-collapse: collapse;
+            background-color: #f3f3f3;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            font-weight: bold;
+        }

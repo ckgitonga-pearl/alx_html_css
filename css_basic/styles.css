@@ -4,6 +4,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: rgb(233, 243, 243);
+    
 }
 
 /* ============================
@@ -67,9 +68,7 @@ header p {
     font-size: 1rem; /* cleaner size */
 }
 
-/* ============================
-   MAIN LAYOUT
-============================ */
+/* MAIN LAYOUT*/
 
 .header-title {
     text-align: center;
@@ -94,11 +93,14 @@ main {
     flex: auto;
     gap: 30px;
     padding: 20px;
+    
 }
 
 /* ARTICLE (2/3 width) */
 article {
     flex: 2;
+    overflow-y: auto;   /* scroll inside article */
+    padding: 20px;
 }
 
 /* ASIDE (1/3 width) */
@@ -108,6 +110,7 @@ aside {
     overflow-y: auto;
     background-color: #f7f7f7;
     border-radius: 10px;
+    
 }
 
 /* Contact box paragraphs */

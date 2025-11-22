@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #111;
+}
+
+/* HEADER */
+.header {
+    width: 100%;
+    padding: 25px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+}
+
+.header img {
+    height: 40px;
+}
+
+.nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* HERO */
+.hero {
+     min-height: 150vh;
+     padding-bottom: 900px;
+    width: 100%;
+    background-image: url(/images/Object.png);
+    background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)),
+        url("images/Object.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.hero-inner {
+    max-width: 700px;
+}
+
+.hero-title {
+    font-size: 70px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.hero-sub {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+.button {
+    background: #C039FF;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.learn {
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+/* PROS SECTION */
+.pros {
+    margin-top: -100px; /* pulls section upward like screenshot */
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding-bottom: 80px;
+}
+
+.pro {
+    text-align: center;
+}
+
+.pro img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.pro h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.pro p {
+    font-size: 14px;
+    opacity: 0.8;
+}

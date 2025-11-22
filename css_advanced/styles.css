@@ -91,11 +91,12 @@ body {
     font-size: 24px;
     font-weight: 300;
     margin-top: 20px;
+   
 }
-
+  
 /* PROS SECTION */
 .pros {
-    margin-top: -280px; /* pulls profiles upward into the hero */
+    margin-top: -280px; 
     display: flex;
     justify-content: center;
     gap: 60px;
@@ -152,7 +153,7 @@ body {
     max-width: 600px;
 }
 
-.quote {
+.blockquote {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 20px;

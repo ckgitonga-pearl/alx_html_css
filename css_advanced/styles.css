@@ -7,7 +7,9 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    background-color: #111;
+    background-color: white;
+
+    
 }
 
 /* HEADER */
@@ -127,7 +129,7 @@ body {
 /* TESTIMONIAL PART*/
 .testimonial {
     width: 100%;
-    background: #C271FF; /* purple */
+    background: #C271FF; 
     padding: 80px 0;
     display: flex;
     justify-content: center;
@@ -186,12 +188,12 @@ body {
 }
 
 .popular-tutorials h2 span {
-    color: #a639f5; /* purple word "popular" */
+    color: #a639f5; 
 }
 .popular-tutorials h2{
 color: #111;
 }
-/* GRID */
+
 .tutorial-grid {
     display: flex;
     justify-content: space-between;
@@ -199,7 +201,7 @@ color: #111;
     flex-wrap: wrap;
 }
 
-/* CARD */
+
 .tutorial-card {
     width: 23%;
     background: white;
@@ -220,7 +222,7 @@ color: #111;
     color: #555;
 }
 
-/* IMAGE + PLAY BUTTON */
+
 .thumb {
     position: relative;
     width: 100%;
@@ -275,9 +277,9 @@ color: #111;
     text-align: right;
     margin-top: 5px;
 }
-/* Membership Section */
+
 .membership {
-    background-color: #0A1B2A; /* deep navy */
+    background-color: #0A1B2A; 
     padding: 80px 0;
     text-align: center;
     color: #fff;
@@ -290,7 +292,7 @@ color: #111;
 }
 
 .membership h2 span {
-    color: #C86BFA; /* purple highlight */
+    color: #C86BFA; 
     font-weight: 500;
 }
 
@@ -330,7 +332,7 @@ color: #111;
 .register-btn:hover {
     opacity: 0.8;
 }
-/* ===== F.A.Q SECTION ===== */
+/*  F.A.Q SECTION */
 .faq-section {
     width: 100%;
     padding: 80px 0;
@@ -347,13 +349,13 @@ color: #111;
     letter-spacing: 2px;
 }
 
-/* Grid for 2 columns */
+
 .faq-container {
     width: 80%;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 70px 120px; /* row gap, column gap */
+    gap: 70px 120px; 
 }
 
 /* FAQ Items */
@@ -370,13 +372,13 @@ color: #111;
     color: #666;
 }
 footer {
-    background-color: #031126;   /* Dark navy background */
+    background-color: #031126;   
     padding: 50px 0;
     color: #ffffff;
     text-align: center;
 }
 
-/* Flex container for left logo + right icons */
+
 .footer-content {
     max-width: 1000px;
     margin: 0 auto;
@@ -388,7 +390,7 @@ footer {
 }
 
 footer {
-    background-color: #071629; /* adjust if needed */
+    background-color: #071629; 
     padding: 50px 0;
     color: #fff;
     margin-bottom: 0px;
@@ -406,7 +408,7 @@ footer {
 }
 
 .footer-left img.footer-logo {
-    width: 120px; /* adjust size if needed */
+    width: 120px; 
 }
 
 .footer-center .footer-small {

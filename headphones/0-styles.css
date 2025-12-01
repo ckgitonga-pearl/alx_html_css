@@ -1,37 +1,175 @@
+/* ---------- global container & reset ---------- */
+:root{
+  --max-content: 1000px;
+  --accent: #FF6565;
+  --white: #ffffff;
+  --nav-alpha: rgba(255,255,255,0.95);
+}
+
+* { box-sizing: border-box; }
+html,body { margin:0; height:100%; font-family: Arial, system-ui, -apple-system; }
+
+/* central page container used by header content */
+.header-container,
+.container {
+  max-width: var(--max-content);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- HEADER ---------- */
 header {
-    display: flex;              /* Places logo + links side-by-side */
-    justify-content: space-between;   /* Pushes logo left and links right */
-    align-items: center;        /* Centers everything vertically */
-    padding: 15px 40px;         /* Space inside the header */
-    background-color: #ffffff;  /* You can change this */
-    border-bottom: 1px solid #e5e5e5; /* Light line under header */
+  position: absolute;    /* sit on top of hero */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;         /* ensure header is above everything */
+  background: transparent;
 }
 
-/* ---- LOGO (favicon image) ---- */
-header img {
-    width: 40px;        /* Adjust size of favicon */
-    height: 40px;
-    object-fit: contain;
+/* layout wrapper for header items */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 0;
 }
 
-/* ---- NAVIGATION LINKS ---- */
-nav ul {
-    list-style: none;     /* Removes bullet points */
-    display: flex;        /* Places links in a row */
-    gap: 25px;            /* Space between links */
-    margin: 0;
-    padding: 0;
+/* logo: image + small text */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--white);
 }
 
-nav a {
-    text-decoration: none;     /* Removes underline */
-    color: #333;               /* Text color */
-    font-size: 16px;  
-    font-weight: 500;    
-    transition: 0.3s;          /* Smooth hover animation */
+/* image - use a clear size */
+.logo-img {
+  width: 52px;    /* adjust if you want slightly smaller/larger */
+  height: 52px;
+  display: block;
+  object-fit: contain;
+  -webkit-user-drag: none;
 }
 
-/* ---- HOVER EFFECT ---- */
-nav a:hover {
-    color: #007bff;            /* Turns blue when hovered */
+/* small brand text next to icon */
+.logo-text {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 13px;
+  font-family: "Montserrat", Arial, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-left: 2px;
+  white-space: nowrap;
+}
+
+/* ---------- NAV ---------- */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--nav-alpha);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: lowercase;
+  letter-spacing: .04em;
+  transition: color .18s ease, transform .18s ease;
+}
+.nav-links a:hover,
+.nav-links a:active {
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* ---------- HERO (full-screen background) ---------- */
+.hero {
+  position: relative;   /* stacking context for overlays */
+  min-height: 100vh;    /* full viewport height */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px;  /* top padding leaves space for header */
+  color: var(--white);
+  background-image:
+    radial-gradient(circle at 50% 15%, rgba(10,28,41,0.45) 0%, rgba(10,28,41,0.65) 35%, rgba(7,24,39,0.9) 80%),
+    linear-gradient(180deg, rgba(7,24,39,0.18) 0%, rgba(7,24,39,0.85) 70%),
+    url("images/headphones_hero_1.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 -180px 120px rgba(7,24,39,0.75); /* deep bottom vignette */
+}
+
+/* hero inner content width */
+.hero > .container {
+  max-width: 880px;
+}
+
+/* headline */
+.hero h1 {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  margin: 0 0 8px;
+  line-height: 1.05;
+  text-shadow: 0 6px 20px rgba(4,16,24,0.6);
+}
+
+/* subheading */
+.hero p {
+  margin: 0 0 28px;
+  color: rgba(255,255,255,0.92);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* CTA button */
+.hero .btn {
+  display: inline-block;
+  background: linear-gradient(180deg, #ff6b6b, #ff4d4d);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 28px;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: "Montserrat", Arial, sans-serif;
+  letter-spacing: .04em;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(240,90,90,0.18);
+}
+.hero .btn:hover,
+.hero .btn:active {
+  opacity: 0.9;   /* your requested interaction */
+}
+
+/* extra paragraph under CTA */
+.hero .lead {
+  margin-top: 24px;
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ---------- RESPONSIVE (mobile <=480px) ---------- */
+@media (max-width: 480px) {
+  .header-container { padding: 14px 12px; flex-direction: column; gap: 12px; }
+  .nav-links { flex-direction: column; gap: 10px; align-items: center; }
+  .logo-img { width: 44px; height: 44px; }
+  .logo-text { font-size: 12px; }
+  .hero { padding: 80px 12px; min-height: 100vh; }
+  .hero h1 { font-size: 20px; }
+  .hero p, .hero .lead { font-size: 13px; }
 }

@@ -1,0 +1,37 @@
+header {
+    display: flex;              /* Places logo + links side-by-side */
+    justify-content: space-between;   /* Pushes logo left and links right */
+    align-items: center;        /* Centers everything vertically */
+    padding: 15px 40px;         /* Space inside the header */
+    background-color: #ffffff;  /* You can change this */
+    border-bottom: 1px solid #e5e5e5; /* Light line under header */
+}
+
+/* ---- LOGO (favicon image) ---- */
+header img {
+    width: 40px;        /* Adjust size of favicon */
+    height: 40px;
+    object-fit: contain;
+}
+
+/* ---- NAVIGATION LINKS ---- */
+nav ul {
+    list-style: none;     /* Removes bullet points */
+    display: flex;        /* Places links in a row */
+    gap: 25px;            /* Space between links */
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;     /* Removes underline */
+    color: #333;               /* Text color */
+    font-size: 16px;  
+    font-weight: 500;    
+    transition: 0.3s;          /* Smooth hover animation */
+}
+
+/* ---- HOVER EFFECT ---- */
+nav a:hover {
+    color: #007bff;            /* Turns blue when hovered */
+}

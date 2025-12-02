@@ -173,3 +173,137 @@ header {
   .hero h1 { font-size: 20px; }
   .hero p, .hero .lead { font-size: 13px; }
 }
+:root {
+  --max-content: 1000px;
+  --accent: #FF6565;
+  --muted: #60727b;
+  --dark: #0f2433;
+  --white: #ffffff;
+}
+
+/* container helper (same as other sections) */
+.container {
+  max-width: var(--max-content);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section wrapper */
+.what-we-do {
+  background: #ffffff;           /* white band as in design */
+  color: var(--dark);
+  padding: 64px 0 80px;         /* top and bottom spacing */
+}
+
+/* Section title */
+.what-we-do h2 {
+  text-align: center;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 0 18px;
+  color: var(--dark);
+}
+
+/* short intro paragraph under title */
+.what-we-do .intro {
+  max-width: 820px;
+  margin: 0 auto 42px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* FEATURES GRID (4 items on desktop) */
+.features {
+  display: flex;
+  gap: 36px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;            /* nowrap on wide screens */
+}
+
+/* Each feature block */
+.feature-item {
+  flex: 1 1 0;                  /* flexible equal-width columns */
+  min-width: 160px;             /* prevents extreme squish */
+  text-align: center;
+  padding: 10px 12px;
+}
+
+/* Icon wrapper (uses icon font) */
+.holberton-icon {
+  display: inline-block;
+  margin-bottom: 18px;
+  /* icon color matches CTA accent */
+  color: var(--accent);
+  font-size: 46px;              /* large icon */
+  line-height: 1;
+  width: 56px;
+  height: 56px;
+}
+
+/* If the demo requires <i> inside span, style the i */
+.holberton-icon i {
+  font-style: normal;           /* ensure not italicized */
+  display: inline-block;
+  font-size: inherit;           /* inherit the .holberton-icon size */
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Feature title */
+.feature-item h3 {
+  margin: 6px 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+/* Feature description */
+.feature-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Hover state for icon (subtle lift) */
+.feature-item:hover .holberton-icon {
+  transform: translateY(-6px);
+  transition: transform .18s ease;
+}
+
+/* ===========================
+   Responsiveness
+   - tablet: wrap into 2 columns
+   - mobile: single column stack
+   =========================== */
+
+@media (max-width: 900px) {
+  .features {
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+  .feature-item {
+    flex: 0 0 48%;  /* two per row */
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .what-we-do {
+    padding: 44px 0 56px;
+  }
+  .features { gap: 18px; }
+  .feature-item {
+    flex: 0 0 100%;  /* single column */
+    padding: 14px 6px;
+  }
+  .holberton-icon { font-size: 36px; width: 44px; height: 44px; margin-bottom: 12px; }
+  .what-we-do h2 { font-size: 18px; }
+  .what-we-do .intro { font-size: 13px; }
+}

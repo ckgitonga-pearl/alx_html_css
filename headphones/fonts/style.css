@@ -8,6 +8,7 @@
   font-weight: normal;
   font-style: normal;
   font-display: block;
+  src: url('holberton_school-icon.woff') format('woff');
 }
 
 [class^="holberton_school-icon-"], [class*=" holberton_school-icon-"] {

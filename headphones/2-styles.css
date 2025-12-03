@@ -313,4 +313,71 @@ header {
     display: block;
     margin-bottom: 20px;
 }
-src: url('holberton_school-icon.woff') format('woff');
+
+/* OUR RESULTS SECTION */
+.our-results {
+    text-align: center;
+    padding: 80px 0;
+    background-image: url("images/headphones_hero_2.jpg");  /* <-- your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;   /* text becomes white on dark image */
+}
+
+.our-results h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.results-text {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* GRID */
+.results-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+/* EACH CARD */
+.result-item {
+    text-align: center;
+}
+
+/* PENTAGON SHAPE */
+.pentagon {
+    width: 120px;
+    height: 120px;
+    background: #FF6565;
+    clip-path: polygon(
+        50% 0%,
+        95% 35%,
+        77% 90%,
+        23% 90%,
+        5% 35%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pentagon .value {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+/* LABEL UNDER PENTAGON */
+.label {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #071629;
+}

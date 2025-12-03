@@ -307,3 +307,9 @@ header {
   .what-we-do h2 { font-size: 18px; }
   .what-we-do .intro { font-size: 13px; }
 }
+.feature span {
+    font-size: 80px;
+    color: #FF6565;
+    display: block;
+    margin-bottom: 20px;
+}

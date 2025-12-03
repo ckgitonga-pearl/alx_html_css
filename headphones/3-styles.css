@@ -381,3 +381,70 @@ header {
     font-size: 16px;
     color: #071629;
 }
+/* CONTACT SECTION */
+.contact {
+    padding: 80px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.contact h2 {
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #0f2433;
+}
+
+.contact-form {
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    color: #0f2433;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #d9d9d9;
+    padding: 10px 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: #FF6565;
+}
+
+/* CTA button */
+.btn-submit {
+    display: block;
+    margin: 24px auto 0;
+    background: #ff6565;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 24px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: "Montserrat", Arial, sans-serif;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+}

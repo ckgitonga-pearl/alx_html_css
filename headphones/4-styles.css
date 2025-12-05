@@ -448,3 +448,94 @@ header {
 .btn-submit:hover {
     opacity: 0.9;
 }
+/* ---------- FOOTER (Holberton icon glyphs) ---------- */
+.footer {
+  background: #071629;
+  color: #fff;
+  padding: 60px 0 90px;
+  position: relative;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.footer-logo {
+  width: 120px;
+  height: auto;
+}
+
+/* Social icons container */
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* generic social link */
+.social { text-decoration: none; }
+
+/* Holberton icon helper (makes font-based glyphs behave like icons) */
+.holberton-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.18); /* subtle circle */
+  color: #fff;
+
+  font-size: 22px;      /* glyph size - adjust if needed */
+  line-height: 1;
+  transition: transform .18s ease, background .18s ease;
+}
+
+/* If the icon font provides glyphs via :before, ensure the ::before uses the same font */
+/* (Most holberton demo CSS already sets the font-family; these rules are defensive) */
+.holberton-icon::before {
+  font-family: 'holberton_school-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+
+/* hover/focus */
+.social:hover .holberton-icon,
+.social:focus .holberton-icon {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.22);
+  outline: none;
+}
+
+/* center copyright at bottom */
+.footer-copyright {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 18px;
+  width: 100%;
+  text-align: center;
+  color: rgba(255,255,255,0.35);
+  font-size: 13px;
+}
+
+/* responsive */
+@media (max-width: 600px) {
+  .footer-inner { flex-direction: column; gap: 16px; align-items: center; padding: 0 20px; }
+  .footer-right { gap: 12px; }
+  .footer-logo { width: 100px; }
+  .footer-copyright { bottom: 12px; font-size: 12px; }
+}

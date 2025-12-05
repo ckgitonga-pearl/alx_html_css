@@ -1,9 +1,12 @@
 /* ---------- global container & reset ---------- */
-:root{
+:root {
   --max-content: 1000px;
   --accent: #FF6565;
+  --muted: #60727b;
+  --dark: #0f2433;
   --white: #ffffff;
   --nav-alpha: rgba(255,255,255,0.95);
+  --pentagon-size: 140px;
 }
 
 * { box-sizing: border-box; }
@@ -173,13 +176,7 @@ header {
   .hero h1 { font-size: 20px; }
   .hero p, .hero .lead { font-size: 13px; }
 }
-:root {
-  --max-content: 1000px;
-  --accent: #FF6565;
-  --muted: #60727b;
-  --dark: #0f2433;
-  --white: #ffffff;
-}
+
 
 /* container helper (same as other sections) */
 .container {
@@ -187,7 +184,6 @@ header {
   margin: 0 auto;
   padding: 0 20px;
 }
-
 /* Section wrapper */
 .what-we-do {
   background: #ffffff;           /* white band as in design */
@@ -314,73 +310,87 @@ header {
     margin-bottom: 20px;
 }
 
-/* OUR RESULTS SECTION */
-.our-results {
-    text-align: center;
-    padding: 80px 0;
-    background-image: url("images/headphones_hero_2.jpg");  /* <-- your image */
+
+/* -------------------------------
+   OUR RESULTS SECTION (NO IMAGE)
+-------------------------------- */
+
+.results {
+    width: 100%;
+    padding: 100px 0;
+    background-image: url("images/headphones_hero.jpg"); /* your image here */
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #fff;   /* text becomes white on dark image */
+    background: #ffffff;   /* plain white background */
+  color: #071629;        /* dark text for readability on white */
+  padding: 80px 0;       /* vertical space */
+  text-align: center;
+  position: relative
 }
 
-.our-results h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
+
+
+.results h2 {
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-.results-text {
-    max-width: 600px;
-    margin: 0 auto 60px;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
+.results-desc {
+    color: black;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    line-height: 1.7;
 }
 
-/* GRID */
+/* ------------------------------ */
+/* FLEX LAYOUT FOR THE PENTAGONS */
+/* ------------------------------ */
+
 .results-grid {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 60px;
+    align-items: flex-end;
+    gap: 40px;
     flex-wrap: wrap;
 }
 
-/* EACH CARD */
-.result-item {
-    text-align: center;
-}
+/* ------------------------------ */
+/* CSS PENTAGON SHAPE */
+/* ------------------------------ */
 
-/* PENTAGON SHAPE */
 .pentagon {
-    width: 120px;
-    height: 120px;
-    background: #FF6565;
+    width: 180px;
+    height: 180px;
+    background: #ff6e79;
     clip-path: polygon(
         50% 0%,
-        95% 35%,
-        77% 90%,
-        23% 90%,
-        5% 35%
+        100% 38%,
+        82% 100%,
+        18% 100%,
+        0% 38%
     );
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.pentagon .value {
-    font-size: 26px;
-    font-weight: bold;
+.pentagon-inner {
+    text-align: center;
     color: white;
 }
 
-/* LABEL UNDER PENTAGON */
-.label {
-    margin-top: 15px;
-    font-size: 16px;
-    color: #071629;
+.pentagon-inner h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
 }
+
+.pentagon-inner p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
 /* CONTACT SECTION */
 .contact {
     padding: 80px 0;
@@ -504,7 +514,6 @@ header {
 /* (Most holberton demo CSS already sets the font-family; these rules are defensive) */
 .holberton-icon::before {
   font-family: 'holberton_school-icon' !important;
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;

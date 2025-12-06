@@ -1,4 +1,4 @@
-/* ---------- global container & reset ---------- */
+
 :root{
   --max-content: 1000px;
   --accent: #FF6565;
@@ -187,7 +187,6 @@ header {
   margin: 0 auto;
   padding: 0 20px;
 }
-
 /* Section wrapper */
 .what-we-do {
   background: #ffffff;           /* white band as in design */
@@ -313,6 +312,8 @@ header {
     display: block;
     margin-bottom: 20px;
 }
+
+
 /* OUR RESULTS SECTION */
 .our-results {
     text-align: center;

@@ -1,0 +1,443 @@
+:root{
+  --max-content: 1000px;
+  --accent: #FF6565;
+  --white: #ffffff;
+  --muted: #60727b;
+  --dark: #0f2433;
+  --nav-alpha: rgba(255,255,255,0.95);
+  --bg-dark-hero: #071629;
+  --pentagon-size: 120px;
+}
+
+* { box-sizing: border-box; }
+html,body { margin:0; height:100%; font-family: "Montserrat", Arial, sans-serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
+/* central page container used by header content */
+.header-container,
+.container {
+  max-width: var(--max-content);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  position: absolute;    /* sits on top of hero */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: transparent;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 0;
+}
+
+/* logo */
+.logo { display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:var(--white); }
+.logo img { width: 42px; height: auto; display:block; }
+
+/* nav */
+.nav-links { list-style: none; display:flex; gap:32px; margin:0; padding:0; align-items:center; }
+.nav-links a { color: var(--nav-alpha); text-decoration:none; font-size:12px; font-weight:600; text-transform:lowercase; letter-spacing:.04em; transition: color .18s ease, transform .18s ease; }
+.nav-links a:hover, .nav-links a:active { color: var(--accent); transform: translateY(-1px); }
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:100px 20px;
+  color: var(--white);
+  background-image:
+    radial-gradient(circle at 50% 15%, rgba(10,28,41,0.45) 0%, rgba(10,28,41,0.65) 35%, rgba(7,24,39,0.9) 80%),
+    linear-gradient(180deg, rgba(7,24,39,0.18) 0%, rgba(7,24,39,0.85) 70%),
+    url("images/headphones_hero_1.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 -180px 120px rgba(7,24,39,0.75);
+}
+
+.hero > .container { max-width: 880px; }
+
+.hero h1 { font-weight:800; font-size:32px; margin:0 0 8px; line-height:1.05; text-shadow:0 6px 20px rgba(4,16,24,0.6); }
+.hero .sub { margin:0 0 28px; color: rgba(255,255,255,0.92); font-size:15px; font-weight:600; }
+.hero .btn { display:inline-block; background: linear-gradient(180deg,#ff6b6b,#ff4d4d); color:#fff; padding:12px 28px; border-radius:28px; text-decoration:none; font-weight:700; letter-spacing:.04em; border:none; cursor:pointer; box-shadow:0 8px 18px rgba(240,90,90,0.18); transition: transform .18s ease, opacity .18s ease; }
+.hero .btn:hover { transform: translateY(-4px); opacity:0.95; }
+.hero .lead { margin-top:24px; color: rgba(255,255,255,0.85); font-size:14px; line-height:1.7; }
+
+/* ---------- SECTION: WHAT WE DO ---------- */
+.what-we-do {
+  background: #ffffff;
+  color: var(--dark);
+  padding: 64px 0 80px;
+  text-align: center;
+}
+
+.what-we-do h2 {
+  font-weight:700;
+  font-size:20px;
+  margin:0 0 12px;
+  color:var(--dark);
+}
+
+.what-we-do .intro {
+  max-width:820px;
+  margin:0 auto 34px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+}
+
+/* features layout */
+.features {
+  display:flex;
+  gap:36px;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:nowrap;
+  max-width: var(--max-content);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Each feature block (animated) */
+.feature-item {
+  flex: 1 1 0;
+  min-width: 160px;
+  text-align:center;
+  padding: 10px 12px;
+  background: transparent;
+  border-radius: 10px;
+  /* subtle entrance (staggered via inline delays in CSS below) */
+  opacity: 0;
+  transform: translateY(12px) scale(0.995) rotate(0deg);
+  animation: featureIn 700ms ease forwards;
+  will-change: transform, opacity;
+}
+
+/* stagger delays */
+.feature-item:nth-child(1) { animation-delay: 0.08s; }
+.feature-item:nth-child(2) { animation-delay: 0.2s; }
+.feature-item:nth-child(3) { animation-delay: 0.34s; }
+.feature-item:nth-child(4) { animation-delay: 0.46s; }
+
+/* icon wrapper */
+.holberton-icon {
+  display:inline-block;
+  margin-bottom:18px;
+  color: var(--accent);
+  font-size:46px;
+  line-height:1;
+  width:56px;
+  height:56px;
+  transition: transform .35s cubic-bezier(.2,.9,.3,1), color .25s ease, filter .25s ease;
+  will-change: transform;
+}
+
+/* style for <i> inside span */
+.holberton-icon i { display:inline-block; font-size:inherit; width:100%; height:100%; text-align:center; vertical-align:middle; }
+
+/* titles & paragraph */
+.feature-item h3 { margin:6px 0 8px; font-size:14px; font-weight:700; color:var(--dark); }
+.feature-item p { margin:0; color:var(--muted); font-size:13px; line-height:1.6; }
+
+/* Idle animation for feature item: float + subtle rotate + opacity pulse */
+@keyframes featureFloat {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  25% { transform: translateY(-6px) rotate(-1deg); opacity: 0.98; }
+  50% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  75% { transform: translateY(-4px) rotate(1deg); opacity: 0.99; }
+  100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+}
+
+/* Entrance animation */
+@keyframes featureIn {
+  0% { opacity:0; transform: translateY(12px) scale(.995) rotate(-1deg); }
+  100% { opacity:1; transform: translateY(0) scale(1) rotate(0deg); }
+}
+
+/* Apply idle loop (ON everywhere including mobile, per choice A) */
+.feature-item {
+  animation-name: featureIn, featureFloat;
+  animation-duration: 0.7s, 3.8s;
+  animation-timing-function: ease, ease-in-out;
+  animation-fill-mode: forwards, both;
+  animation-iteration-count: 1, infinite;
+  animation-delay: 0s, calc(0.6s + var(--stagger, 0s));
+}
+
+/* Set a CSS var for staggering the float start per child (using nth-child) */
+.feature-item:nth-child(1) { --stagger: 0s; }
+.feature-item:nth-child(2) { --stagger: 0.25s; }
+.feature-item:nth-child(3) { --stagger: 0.45s; }
+.feature-item:nth-child(4) { --stagger: 0.65s; }
+
+/* Hover: scale, tilt, icon rotate and lift */
+.feature-item:hover {
+  transform: translateY(-10px) scale(1.07) rotate(1.2deg);
+  box-shadow: 0 18px 34px rgba(10,28,41,0.08);
+  transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s ease;
+}
+
+.feature-item:hover .holberton-icon { transform: rotateZ(10deg) scale(1.25); color: #ff3b3b; }
+
+/* ---------- RESPONSIVENESS for features ---------- */
+@media (max-width: 900px) {
+  .features { gap:28px; flex-wrap:wrap; }
+  .feature-item { flex: 0 0 48%; margin-bottom: 18px; }
+}
+@media (max-width: 480px) {
+  .what-we-do { padding:44px 12px 56px; }
+  .features { gap:18px; }
+  .feature-item { flex: 0 0 100%; padding: 14px 6px; }
+  .holberton-icon { font-size:36px; width:44px; height:44px; margin-bottom:12px; }
+  .what-we-do h2 { font-size:18px; }
+  .what-we-do .intro { font-size:13px; }
+}
+
+/* ---------- OUR RESULTS ---------- */
+.our-results {
+  text-align: center;
+  padding: 80px 0;
+  background-image: url("images/headphones_hero_2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.our-results h2 {
+  font-size: 32px;
+  margin-bottom: 18px;
+  color: #fff;
+}
+.results-text {
+  max-width: 600px;
+  margin: 0 auto 36px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.9);
+}
+
+/* grid */
+.results-grid {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px 40px;
+}
+
+/* each result card (pentagon) */
+.result-item {
+  text-align: center;
+  width: calc(var(--pentagon-size) + 20px);
+}
+/* pentagon appearance + idle animations */
+.pentagon {
+  width: var(--pentagon-size);
+  height: var(--pentagon-size);
+  background: var(--accent);
+  clip-path: polygon(50% 0%, 95% 35%, 77% 90%, 23% 90%, 5% 35%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  transition: transform .32s cubic-bezier(.2,.9,.3,1), box-shadow .22s ease, background .22s;
+  will-change: transform, box-shadow;
+  animation: pentagonFloat 3.6s ease-in-out infinite;
+}
+
+/* pentagon idle keyframes: bounce + tiny rotation sway */
+@keyframes pentagonFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(-2deg); }
+  50% { transform: translateY(0) rotate(0deg); }
+  75% { transform: translateY(-5px) rotate(2deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* pentagon hover: pop, rotate, glow */
+.pentagon:hover {
+  transform: scale(1.14) rotate(8deg);
+  box-shadow: 0 18px 40px rgba(255,101,101,0.22), 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* value inside pentagon */
+.pentagon .value {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+  line-height: 1;
+}
+.pentagon .desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.95);
+  font-weight: 600;
+  text-transform: none;
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* label under pentagon */
+.label { margin-top:14px; font-size:15px; color: rgba(255,255,255,0.95); }
+
+/* Entrance for results items (staggered) */
+.result-item {
+  opacity: 0;
+  transform: translateY(12px) scale(.98);
+  animation: resultIn 700ms ease forwards;
+}
+
+.result-item:nth-child(1) { animation-delay: 0.08s; }
+.result-item:nth-child(2) { animation-delay: 0.22s; }
+.result-item:nth-child(3) { animation-delay: 0.36s; }
+.result-item:nth-child(4) { animation-delay: 0.5s; }
+
+@keyframes resultIn {
+  0% { opacity: 0; transform: translateY(14px) scale(.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+
+/* ---------- CONTACT SECTION ---------- */
+.contact { padding: 80px 0; background: #fff; text-align:center; color:var(--dark); }
+.contact h2 { font-size:22px; font-weight:700; margin-bottom:18px; color:var(--dark); }
+.contact-form { max-width:420px; margin:0 auto; text-align:left; }
+.form-group { margin-bottom:18px; }
+.form-group label { display:block; font-size:13px; color:var(--dark); margin-bottom:8px; font-weight:600; }
+.form-group input, .form-group textarea { width:100%; border:1px solid #e6e6e6; padding:10px 12px; border-radius:6px; outline:none; transition: box-shadow .18s ease, border-color .18s ease; }
+.form-group input:focus, .form-group textarea:focus { box-shadow:0 6px 18px rgba(15,36,51,0.06); border-color: var(--accent); }
+
+/* CTA */
+.btn-submit { display:block; margin: 18px auto 0; background: var(--accent); color:#fff; padding:10px 28px; border-radius:24px; border:none; font-weight:700; cursor:pointer; transition: transform .18s ease, opacity .18s ease; }
+.btn-submit:hover { transform: translateY(-4px); opacity:0.95; }
+
+/* ---------- FOOTER (Holberton icon glyphs) ---------- */
+.footer {
+  background: #071629;
+  color: #fff;
+  padding: 60px 0 90px;
+  position: relative;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.footer-logo {
+  width: 120px;
+  height: auto;
+}
+
+/* Social icons container */
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* generic social link */
+.social { text-decoration: none; }
+
+/* Holberton icon helper (makes font-based glyphs behave like icons) */
+.holberton-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.18); /* subtle circle */
+  color: #fff;
+
+  font-size: 22px;      /* glyph size - adjust if needed */
+  line-height: 1;
+  transition: transform .18s ease, background .18s ease;
+}
+
+/* If the icon font provides glyphs via :before, ensure the ::before uses the same font */
+/* (Most holberton demo CSS already sets the font-family; these rules are defensive) */
+.holberton-icon::before {
+  font-family: 'holberton_school-icon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+
+/* hover/focus */
+.social:hover .holberton-icon,
+.social:focus .holberton-icon {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.22);
+  outline: none;
+}
+
+/* center copyright at bottom */
+.footer-copyright {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 18px;
+  width: 100%;
+  text-align: center;
+  color: rgba(255,255,255,0.35);
+  font-size: 13px;
+}
+
+/* responsive */
+@media (max-width: 600px) {
+  .footer-inner { flex-direction: column; gap: 16px; align-items: center; padding: 0 20px; }
+  .footer-right { gap: 12px; }
+  .footer-logo { width: 100px; }
+  .footer-copyright { bottom: 12px; font-size: 12px; align-items: center;}
+}
+/* ---------- RESPONSIVENESS ---------- */
+@media (max-width: 900px) {
+  .features { gap: 28px; }
+  .feature-item { flex: 0 0 48%; }
+  .results-grid { gap: 40px; }
+  .header-container { padding: 18px 20px; }
+}
+
+@media (max-width: 600px) {
+  .features { gap: 20px; }
+  .feature-item { flex: 0 0 100%; padding: 14px 12px; }
+  .pentagon { width: calc(var(--pentagon-size) * 0.85); height: calc(var(--pentagon-size) * 0.85); }
+  .hero h1 { font-size: 22px; }
+  .hero { padding: 60px 12px; min-height: 60vh; background-position: center 30%; }
+ 
+}
+
+/* small screens: keep idle animations but reduce intensity for perf */
+@media (max-width: 420px) {
+  @keyframes featureFloat { 0%{transform:translateY(0);} 50%{transform:translateY(-4px);} 100%{transform:translateY(0);} }
+  @keyframes pentagonFloat { 0%{transform:translateY(0);} 50%{transform:translateY(-5px);} 100%{transform:translateY(0);} }
+  .feature-item { animation-duration: .6s, 3.2s; }
+  .pentagon { animation-duration: 3.2s; }
+}

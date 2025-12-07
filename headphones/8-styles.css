@@ -46,6 +46,23 @@ header {
 .nav-links a { color: var(--nav-alpha); text-decoration:none; font-size:12px; font-weight:600; text-transform:lowercase; letter-spacing:.04em; transition: color .18s ease, transform .18s ease; }
 .nav-links a:hover, .nav-links a:active { color: var(--accent); transform: translateY(-1px); }
 
+.hamburger {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 24px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger span {
+    display: block;
+    height: 4px;
+    background: white;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
@@ -433,6 +450,47 @@ header {
   .hero { padding: 60px 12px; min-height: 60vh; background-position: center 30%; }
  
 }
+@media (max-width: 480px) {
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: #0a1b2b;
+        flex-direction: column;
+        width: 180px;
+        padding: 20px;
+        border-radius: 10px;
+        display: none; /* hidden by default */
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+        text-align: right;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Show the mobile menu when active */
+    .nav-links.show {
+        display: flex;
+    }
+
+    /* Animate hamburger into X */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+}
+
 
 /* small screens: keep idle animations but reduce intensity for perf */
 @media (max-width: 420px) {

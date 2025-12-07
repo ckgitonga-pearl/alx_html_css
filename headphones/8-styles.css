@@ -332,17 +332,62 @@ header {
 
 
 /* ---------- CONTACT SECTION ---------- */
-.contact { padding: 80px 0; background: #fff; text-align:center; color:var(--dark); }
-.contact h2 { font-size:22px; font-weight:700; margin-bottom:18px; color:var(--dark); }
-.contact-form { max-width:420px; margin:0 auto; text-align:left; }
-.form-group { margin-bottom:18px; }
-.form-group label { display:block; font-size:13px; color:var(--dark); margin-bottom:8px; font-weight:600; }
-.form-group input, .form-group textarea { width:100%; border:1px solid #e6e6e6; padding:10px 12px; border-radius:6px; outline:none; transition: box-shadow .18s ease, border-color .18s ease; }
-.form-group input:focus, .form-group textarea:focus { box-shadow:0 6px 18px rgba(15,36,51,0.06); border-color: var(--accent); }
+.contact {
+   padding: 80px 0; 
+   background: #fff; 
+   text-align:center; 
+   color:var(--dark); 
+  }
+.contact h2 {
+   font-size:22px; 
+   font-weight:700; 
+   margin-bottom:18px; 
+   color:var(--dark);
+   }
+.contact-form { 
+  max-width:420px; 
+  margin:0 auto; 
+  text-align:left; 
+}
+.form-group { 
+  margin-bottom:18px; 
+}
+.form-group label { 
+  display:block; 
+  font-size:13px; 
+  color:var(--dark); 
+  margin-bottom:8px; 
+  font-weight:600; 
+}
+.form-group input, .form-group textarea {
+   width:100%; 
+   border:1px solid #e6e6e6;
+    padding:10px 12px; 
+    border-radius:6px; 
+    outline:none; 
+    transition: box-shadow .18s ease, border-color .18s ease;
+   }
+.form-group input:focus, .form-group textarea:focus { 
+  box-shadow:0 6px 18px rgba(15,36,51,0.06);
+   border-color: var(--accent); 
+  }
 
 /* CTA */
-.btn-submit { display:block; margin: 18px auto 0; background: var(--accent); color:#fff; padding:10px 28px; border-radius:24px; border:none; font-weight:700; cursor:pointer; transition: transform .18s ease, opacity .18s ease; }
-.btn-submit:hover { transform: translateY(-4px); opacity:0.95; }
+.btn-submit { display:block; 
+  margin: 18px auto 0; 
+  background: var(--accent); 
+  color:#fff; 
+  padding:10px 28px; 
+  border-radius:24px; 
+  border:none; 
+  font-weight:700; 
+  cursor:pointer; 
+  transition: transform .18s ease, opacity .18s ease; 
+}
+.btn-submit:hover { 
+  transform: translateY(-4px);
+   opacity:0.95; 
+  }
 
 /* ---------- FOOTER (Holberton icon glyphs) ---------- */
 .footer {
@@ -388,16 +433,15 @@ header {
   height: 50px;
   border-radius: 50%;
 
-  background: rgba(255,255,255,0.18); /* subtle circle */
+  background: rgba(255,255,255,0.18); 
   color: #fff;
 
-  font-size: 22px;      /* glyph size - adjust if needed */
+  font-size: 22px;  
   line-height: 1;
   transition: transform .18s ease, background .18s ease;
 }
 
-/* If the icon font provides glyphs via :before, ensure the ::before uses the same font */
-/* (Most holberton demo CSS already sets the font-family; these rules are defensive) */
+
 .holberton-icon::before {
   font-family: 'holberton_school-icon' !important;
   font-style: normal;
@@ -432,8 +476,49 @@ header {
   .footer-inner { flex-direction: column; gap: 16px; align-items: center; padding: 0 20px; }
   .footer-right { gap: 12px; }
   .footer-logo { width: 100px; }
-  .footer-copyright { bottom: 12px; font-size: 12px; align-items: center;}
+  .footer-copyright { bottom: 12px; font-size: 12px; }
 }
+
+/* Holberton icon helper*/
+.holberton-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.18); /* subtle circle */
+  color: #fff;
+
+  font-size: 22px;      /* glyph size - adjust if needed */
+  line-height: 1;
+  transition: transform .18s ease, background .18s ease;
+}
+
+/* If the icon font provides glyphs via :before, ensure the ::before uses the same font */
+/* (Most holberton demo CSS already sets the font-family; these rules are defensive) */
+.holberton-icon::before {
+  font-family: 'holberton_school-icon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+
+/* hover/focus */
+.social:hover .holberton-icon,
+.social:focus .holberton-icon {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.22);
+  outline: none;
+}
+
+
+
+
 /* ---------- RESPONSIVENESS ---------- */
 @media (max-width: 900px) {
   .features { gap: 28px; }
@@ -491,8 +576,6 @@ header {
     }
 }
 
-
-/* small screens: keep idle animations but reduce intensity for perf */
 @media (max-width: 420px) {
   @keyframes featureFloat { 0%{transform:translateY(0);} 50%{transform:translateY(-4px);} 100%{transform:translateY(0);} }
   @keyframes pentagonFloat { 0%{transform:translateY(0);} 50%{transform:translateY(-5px);} 100%{transform:translateY(0);} }

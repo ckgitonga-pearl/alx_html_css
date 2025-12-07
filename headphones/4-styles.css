@@ -188,6 +188,11 @@ header {
   padding: 0 20px;
 }
 /* Section wrapper */
+.what-we-do .holberton-icon i {
+    font-family: 'holberton_school-icon' !important;
+    font-style: normal;
+    font-weight: normal;
+}
 .what-we-do {
   background: #ffffff;           /* white band as in design */
   color: var(--dark);
@@ -233,26 +238,25 @@ header {
 
 /* Icon wrapper (uses icon font) */
 .holberton-icon {
-  display: inline-block;
-  margin-bottom: 18px;
-  /* icon color matches CTA accent */
-  color: var(--accent);
-  font-size: 46px;              /* large icon */
-  line-height: 1;
-  width: 56px;
-  height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    width: 120px;
+    height: 120px;
+    color: #FF6565;
+    border-radius: 50%;
+    margin-bottom: 20px;
 }
 
-/* If the demo requires <i> inside span, style the i */
 .holberton-icon i {
-  font-style: normal;           /* ensure not italicized */
-  display: inline-block;
-  font-size: inherit;           /* inherit the .holberton-icon size */
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  vertical-align: middle;
+    font-family: 'holberton_school-icon' !important;  /* MOST IMPORTANT FIX */
+    font-style: normal;
+    font-size: inherit;
+    display: inline-block;
+    line-height: 1;
 }
+
 
 /* Feature title */
 .feature-item h3 {
@@ -483,7 +487,7 @@ header {
 .social { text-decoration: none; }
 
 /* Holberton icon helper (makes font-based glyphs behave like icons) */
-.holberton-icon {
+.footer .holberton-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -492,25 +496,22 @@ header {
   height: 50px;
   border-radius: 50%;
 
-  background: rgba(255,255,255,0.18); /* subtle circle */
+  background: rgba(255,255,255,0.18);
   color: #fff;
 
-  font-size: 22px;      /* glyph size - adjust if needed */
+  font-size: 22px;
   line-height: 1;
   transition: transform .18s ease, background .18s ease;
 }
 
 /* If the icon font provides glyphs via :before, ensure the ::before uses the same font */
 /* (Most holberton demo CSS already sets the font-family; these rules are defensive) */
-.holberton-icon::before {
+.footer .holberton-icon::before {
   font-family: 'holberton_school-icon' !important;
   font-style: normal;
   font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
   line-height: 1;
 }
-
 /* hover/focus */
 .social:hover .holberton-icon,
 .social:focus .holberton-icon {
